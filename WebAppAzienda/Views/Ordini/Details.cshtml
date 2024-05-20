@@ -1,0 +1,32 @@
+﻿@model WebAppAzienda.Models.Ordine
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Dettagli dell'ordine</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            Id dell'utente'
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UtenteId)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrizione dell'ordine:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescrProdotti)
+        </dd>
+    </dl>
+</div>
+

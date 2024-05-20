@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebAppAzienda.Models.Ordine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Elenco degli ordini</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UtenteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescrProdotti)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UtenteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescrProdotti)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Dettagli ordine</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Ordine completato</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
